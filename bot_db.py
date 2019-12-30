@@ -2,8 +2,8 @@ import sqlite3
 import json
 import datetime
 
-timeframe = 'bot_db'
+bots_db = "bots_db"
 sql_transaction = []
 
-connection = sqlite3.connect('{}.db'.format(timeframe))
+connection = sqlite3.connect('{}.db'.format(bots_db))
 c = connection.cursor()
