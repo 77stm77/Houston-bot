@@ -1,15 +1,10 @@
-import sqlite3
-
-bots_db = "bots_db"
-sql_transaction = []
-
-connection = sqlite3.connect('{}.db'.format(bots_db))
-c = connection.cursor()
+from bot.db import create_table
 
 
-def create_table():
-    c.execute("")
+def main():
+    """The main function in the application is run bot. """
+    create_table()
 
 
 if __name__ == '__main__':
-    create_table()
+    main()
