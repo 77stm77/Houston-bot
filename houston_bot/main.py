@@ -1,9 +1,10 @@
-from bot.db import create_table
+from houston_bot.bot.bot import HoustonBot
 
 
 def main():
     """The main function in the application is run bot. """
-    create_table()
+    bot = HoustonBot()
+    bot.run()
 
 
 if __name__ == '__main__':
