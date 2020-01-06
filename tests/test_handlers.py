@@ -51,6 +51,11 @@ class TestBotHandlers(TestCase):
         self.assertTrue(json.loads.called)
 
         apiai.ApiAI.assert_called_with('123ljlj234')
+        self.assertEqual(apiai.ApiAI.return_value.text_request.call_count, 1)
+        self.assertEqual(apiai.ApiAI.return_value.text_request.return_value.query, self.update.message.text)
+
+        self.assertEqual(apiai.ApiAI.return_value.text_request.return_value.session_id, self.test_class.NAME)
+        self.assertEqual(apiai.ApiAI.return_value.text_request.return_value.lang, self.test_class.LANG)
 
         self.assertTrue(self.bot.send_message.called)
         self.bot.send_message.assert_called_with(chat_id=123, text='response_text_test')

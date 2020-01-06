@@ -1,6 +1,7 @@
 from unittest import TestCase
-from houston_bot.bot import HoustonBot
 from unittest.mock import patch
+
+from houston_bot.bot import HoustonBot
 
 
 class TestHoustonBot(TestCase):
