@@ -1,4 +1,4 @@
-from houston_bot.bot.bot import HoustonBot
+from bot import HoustonBot
 
 
 def main():
