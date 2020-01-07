@@ -13,11 +13,11 @@ class TestBotHandlers(TestCase):
         self.bot = MagicMock()
         self.update = MagicMock()
         self.update.message.chat_id = 123
-        self.test_class.WELCOME_TEXT = 'welcome'
-        self.test_class.LANG = 'RU-ru'
-        self.test_class.NAME = 'TestHoustonBot'
-        self.test_class.DIALOG_TOKEN = '123ljlj234'
-        self.test_class.ANSWER = 'not answer'
+        self.test_class.welcome_text = 'welcome'
+        self.test_class.lang = 'RU-ru'
+        self.test_class.name = 'TestHoustonBot'
+        self.test_class.dialog_token = '123ljlj234'
+        self.test_class.answer = 'not answer'
         self.update.message.text = 'message text'
 
     def tearDown(self) -> None:
@@ -54,8 +54,8 @@ class TestBotHandlers(TestCase):
         self.assertEqual(apiai.ApiAI.return_value.text_request.call_count, 1)
         self.assertEqual(apiai.ApiAI.return_value.text_request.return_value.query, self.update.message.text)
 
-        self.assertEqual(apiai.ApiAI.return_value.text_request.return_value.session_id, self.test_class.NAME)
-        self.assertEqual(apiai.ApiAI.return_value.text_request.return_value.lang, self.test_class.LANG)
+        self.assertEqual(apiai.ApiAI.return_value.text_request.return_value.session_id, self.test_class.name)
+        self.assertEqual(apiai.ApiAI.return_value.text_request.return_value.lang, self.test_class.lang)
 
         self.assertTrue(self.bot.send_message.called)
         self.bot.send_message.assert_called_with(chat_id=123, text='response_text_test')

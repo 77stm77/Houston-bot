@@ -1,6 +1,6 @@
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 
-from handlers import BotHandlers
+from .handlers import BotHandlers
 
 
 class HoustonBot(BotHandlers):
@@ -8,7 +8,7 @@ class HoustonBot(BotHandlers):
 
     def run(self):
         """Run Bot Dialog."""
-        updater = Updater(token=self.TOKEN)
+        updater = Updater(token=self.token)
         start_command_handler = CommandHandler('start', self.start)
         text_message_handler = MessageHandler(Filters.text, self.message)
         updater.dispatcher.add_handler(start_command_handler)

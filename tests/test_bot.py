@@ -10,7 +10,7 @@ class TestHoustonBot(TestCase):
     def setUp(self) -> None:
         """Init dependency. """
         self.test_class = HoustonBot()
-        self.test_class.TOKEN = 'jgjg123123'
+        self.test_class.token = 'jgjg123123'
 
     def tearDown(self) -> None:
         """Clean up. """

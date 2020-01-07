@@ -1,11 +1,21 @@
 import os
 
 
-class Config:
+class BaseConfig:
     """Base configure Bot. """
-    TOKEN = os.getenv('TOKEN')
-    DIALOG_TOKEN = os.getenv('DIALOG_TOKEN')
-    NAME = os.getenv('NAME', 'HoustonBot')
-    LANG = os.getenv('LANG', 'ru')
-    WELCOME_TEXT = os.getenv('WELCOME_TEXT', 'Привет, давай пообщаемся?')
-    ANSWER = os.getenv('ANSWER', 'Я Вас не совсем понял!')
+
+    def __init__(self):
+        self.token = os.getenv('TOKEN')
+        self.dialog_token = os.getenv('DIALOG_TOKEN')
+        self.name = os.getenv('NAME', 'HoustonBot')
+        self.lang = os.getenv('LANG', 'ru')
+        self.welcome_text = os.getenv('WELCOME_TEXT', 'Привет, давай пообщаемся?')
+        self.answer = os.getenv('ANSWER', 'Я Вас не совсем понял!')
+
+    def switch_lang(self, lang):
+        """Changes language."""
+        self.lang = lang
+
+    def switch_welcome_text(self, text):
+        """Changes welcome text. """
+        self.welcome_text = text
