@@ -1,7 +1,6 @@
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 
-from .handlers import BotHandlers
-
+from handlers import BotHandlers
 
 class HoustonBot(BotHandlers):
     """Bot AI Houston. """
