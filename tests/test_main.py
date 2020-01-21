@@ -5,19 +5,19 @@ from houston_bot.main import main
 
 
 class TestMain(TestCase):
-    """Testing main func in app. """
+    """Testing main func in app."""
 
     def setUp(self) -> None:
-        """Init dependency. """
+        """Init dependency."""
         self.test_main = main
 
     def tearDown(self) -> None:
-        """Clean up. """
+        """Clean up."""
         del self.test_main
 
     @patch('houston_bot.main.HoustonBot.run')
     def test_main_bot_run(self, bot):
-        """Testing instance bot. """
+        """Testing instance bot."""
         res = self.test_main()
 
         self.assertTrue(bot.called)
