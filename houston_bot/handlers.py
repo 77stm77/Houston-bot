@@ -2,7 +2,7 @@ import json
 
 import apiai
 
-from config import BaseConfig
+from .config import BaseConfig
 
 
 class BotHandlers(BaseConfig):
