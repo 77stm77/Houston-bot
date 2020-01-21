@@ -2,8 +2,9 @@ from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 
 from handlers import BotHandlers
 
+
 class HoustonBot(BotHandlers):
-    """Bot AI Houston. """
+    """Bot AI Houston."""
 
     def run(self):
         """Run Bot Dialog."""

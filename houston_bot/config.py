@@ -2,7 +2,7 @@ import os
 
 
 class BaseConfig:
-    """Base configure Bot. """
+    """Base configure Bot."""
 
     def __init__(self):
         self.token = os.getenv('TOKEN')
@@ -13,9 +13,9 @@ class BaseConfig:
         self.answer = os.getenv('ANSWER', 'Я Вас не совсем понял!')
 
     def switch_lang(self, lang):
-        """Changes language."""
+        """Change language."""
         self.lang = lang
 
     def switch_welcome_text(self, text):
-        """Changes welcome text. """
+        """Change welcome text."""
         self.welcome_text = text
